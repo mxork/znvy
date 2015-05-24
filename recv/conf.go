@@ -20,7 +20,7 @@ var config conf
 func init() {
 	var err error
 	cert, err = tls.LoadX509KeyPair(certfile, keyfile)
-	xk(err)
+	xk(err, "Loading certificate and key files: %s %s", certfile, keyfile)
 	config = conf{
 		lAddr:      "127.0.0.1:1234",
 		srvName:    "bronco.here",
